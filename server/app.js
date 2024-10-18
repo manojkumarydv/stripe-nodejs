@@ -7,6 +7,9 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET);
 app.use(express.json());
 app.use(cors());
 
+app.get("/api", (req,res) => {
+    res.send("helllooooo")
+})
 // checkout api
 app.post("/api/create-checkout-session",async(req,res)=>{
     const {products} = req.body;
